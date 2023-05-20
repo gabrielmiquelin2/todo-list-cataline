@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "text": "Trocar ração do dog",
+      "done": false
+    },
+    {
+      "id": 2,
+      "text": "Lavar as roupas",
+      "done": true
+    },
+    {
+      "id": 3,
+      "text": "Arrumar o quarto",
+      "done": false
+    },
+    {
+      "id": 4,
+      "text": "Ir para academia",
+      "done": true
+    },
+    {
+      "text": "cortar cabelo",
+      "done": true,
+      "id": 5
+    }
+  ]
+}
