@@ -1,27 +1,26 @@
+import axios from "../utils/axios";
 
+export default class Todos {
+  // Obtém a lista de todos da API
+  async index() {
+    const response = await axios.get("/todos");
+    return response.data;
+  }
 
-// CATALINE Gabriel
-import axios from "../utils/axios"
+  // Cria um novo todo na API
+  async store({ text, done }) {
+    const response = await axios.post("/todos", { text, done });
+    return response.data;
+  }
 
-export default class Todos{
-   async index(){
-    const { data }  = await axios.get("/todos")
-    return data 
-   }
+  // Atualiza um todo existente na API
+  async update({ id, text, done }) {
+    const response = await axios.put(`/todos/${id}`, { text, done });
+    return response.data;
+  }
 
-   async store({text, done}){
-      const { data }  = await axios.post("/todos", {text, done})
-      return data 
-   }
-
-   async update({id,text, done}){
-      const { data }  = await axios.put(`/todos/${id}`, {text, done})
-      return data 
-   }
-
-   async destroy({id}){
-    await axios.delete(`/todos/${id}`)
-      
-   }
+  // Remove um todo da API
+  async destroy({ id }) {
+    await axios.delete(`/todos/${id}`);
+  }
 }
-
